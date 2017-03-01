@@ -1,8 +1,8 @@
-package com.brightd.service.impl;
+package com.brightd.service.impl.hello;
 
 import com.brightd.cashflow.Person;
 import com.brightd.cashflow.SampleBean;
-import com.brightd.service.hello.HelloService;
+import com.brightd.service.hello.IDroolsHelloService;
 import org.kie.api.runtime.StatelessKieSession;
 
 import javax.annotation.Resource;
@@ -10,9 +10,8 @@ import javax.annotation.Resource;
 /**
  * Created by pengyong on 17/2/28.
  */
-public class HelloServiceImpl implements HelloService {
+public class DroolsHelloServiceImpl implements IDroolsHelloService {
 
-    @Resource(name="sampleBean")
     private SampleBean sampleBean;
 
     @Override
@@ -21,9 +20,20 @@ public class HelloServiceImpl implements HelloService {
         StatelessKieSession ksession = (StatelessKieSession)sampleBean.getKieSession();
         Person person = new Person("HAL", 44);
         person.setHappy(false);
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++");
         ksession.execute(person);
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++");
         System.out.println(person.isHappy());
 
-        return null;
+        return "hello+++++";
+    }
+
+
+    public SampleBean getSampleBean() {
+        return sampleBean;
+    }
+
+    public void setSampleBean(SampleBean sampleBean) {
+        this.sampleBean = sampleBean;
     }
 }

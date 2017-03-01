@@ -33,7 +33,7 @@ import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"/spring-beans-internal2.xml"})
+@ContextConfiguration(locations = {"/spring/spring-beans-internal2.xml"})
 public class KieSpringAnnotationBasics2Test {
 
 

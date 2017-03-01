@@ -37,7 +37,7 @@ public class KieSpringBasics2Test {
 
     @BeforeClass
     public static void setup() {
-        context = new ClassPathXmlApplicationContext("spring-beans-internal2.xml");
+        context = new ClassPathXmlApplicationContext("spring/spring-beans-internal2.xml");
     }
 
     @Test
